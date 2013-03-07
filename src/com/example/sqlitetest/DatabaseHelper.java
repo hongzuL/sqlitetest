@@ -17,8 +17,8 @@ import android.util.Log;
 import android.view.Menu;
 
 
-public class Database extends SQLiteOpenHelper {     
-	  Database(Context context, String name, CursorFactory cursorFactory, int version) 
+public class DatabaseHelper extends SQLiteOpenHelper {     
+	  DatabaseHelper(Context context, String name, CursorFactory cursorFactory, int version) 
 	  {     
 	    super(context, name, cursorFactory, version);     
 	     }     
