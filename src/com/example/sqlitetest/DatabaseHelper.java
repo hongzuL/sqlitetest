@@ -16,24 +16,51 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.view.Menu;
 
-
-public class DatabaseHelper extends SQLiteOpenHelper {     
-	  DatabaseHelper(Context context, String name, CursorFactory cursorFactory, int version) 
-	  {     
-	    super(context, name, cursorFactory, version);     
-	     }     
-	     
-	     public void onCreate(SQLiteDatabase db) {     
-	         // TODO 创建数据库后，对数据库的操作     
-	     }     
-	     
-	     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {     
-	         // TODO 更改数据库版本的操作     
-	     }     
-	     
-	 public void onOpen(SQLiteDatabase db) {     
+/**
+ * SQLiteOpenHelper is a helper class to manage database creation and version management
+ */
+public class DatabaseHelper extends SQLiteOpenHelper { 
+	private static final int VERSION = 1;
+	/**
+	 * 
+	 * @param context
+	 * @param name
+	 * @param cursorFactory
+	 * @param version
+	 */
+	public DatabaseHelper(Context context, String name, CursorFactory cursorFactory, int version) 
+	  { 
+		 //must use super() to use parent function 
+	     super(context, name, cursorFactory, version);     
+	     } 
+	
+	public DatabaseHelper(Context context, String name, int version){
+		this(context,name,null,version);
+	}
+	
+	public DatabaseHelper(Context context, String name){
+		this(context,name,VERSION);
+	}
+	
+	//This function is used for first creation of the database
+	@Override
+	public void onCreate(SQLiteDatabase db) {     
+	    // TODO 
+		System.out.println("create a database");
+		//execSQL to execute sql statement
+		db.execSQL("create table user(id int,name varchar(20))"); 
+	}     
+	
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {     
+	    // TODO
+		System.out.println("upgrade a database");
+	}     
+	
+	@Override
+	public void onOpen(SQLiteDatabase db) {     
 	         super.onOpen(db);       
-	         // TODO 每次成功打开数据库后首先被执行     
+	         // TODO     
 	     }     
 	 }
 

@@ -7,5 +7,6 @@
     <string name="id">ID</string>
     <string name="desc">Description</string>
     <string name="ingredients">Indgredients</string>
+    <string name="create_db">Create Database</string>
 
 </resources>
