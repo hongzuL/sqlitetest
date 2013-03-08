@@ -62,5 +62,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	         super.onOpen(db);       
 	         // TODO     
 	     }     
-	 }
+}
 

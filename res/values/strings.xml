@@ -8,5 +8,10 @@
     <string name="desc">Description</string>
     <string name="ingredients">Indgredients</string>
     <string name="create_db">Create Database</string>
+    <string name="update_db">Update Database</string>
+    <string name="insert">Insert</string>
+    <string name="update">Update</string>
+    <string name="select">Select</string>
+    <string name="delete">Delete</string>
 
 </resources>
